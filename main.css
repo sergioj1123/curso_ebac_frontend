@@ -2,127 +2,52 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-body > header {
-  background-color: #2f3640;
-  padding: 16px 0;
-  color: white;
-}
-
-header .container {
+body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  row-gap: 30px;
 }
 
-header li {
-  display: inline;
-}
-
-header li a {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  margin-left: 16px;
-}
-
-header li a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  width: 1366px;
-  margin: 0 auto;
-}
-
-.articles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.articles article img {
-  /* height: 180px; */
+main {
+  max-width: 400px;
   width: 100%;
-  height: 273px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
-.articles article {
-  width: 30%;
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
 }
 
-section {
-  padding: 16px 0;
+.form input {
+  max-width: 600px;
+  width: 100%;
 }
 
-section h2,
-.articles article {
-  margin-bottom: 16px;
+.form button {
+  max-width: 100px;
+  align-self: center;
 }
 
-.articles article h3 {
-  margin: 8px 0;
+.title {
+  font-weight: 400;
 }
 
-.articles article a {
-  color: white;
-  padding: 8px;
-  font-weight: bold;
-  display: inline-block;
-  text-decoration: none;
-  margin-top: 8px;
+#to-do-list {
+  list-style: none;
 }
 
-.articles article a:hover {
-  text-decoration: underline;
-}
-
-.articles article p,
-.articles article a {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.articles article h3 {
-  font-size: 24px;
-}
-
-section h2 {
-  font-size: 32px;
-}
-
-#sports {
-  background-color: rgba(0, 255, 0, 0.1);
-}
-
-#sports .articles article a {
-  background-color: #009432;
-  color: black;
-}
-
-#economy {
-  background-color: rgba(202, 235, 15, 0.1);
-}
-
-#economy .articles article a {
-  background-color: #ebad02;
-  color: black;
-}
-
-#tech {
-  background-color: rgba(179, 58, 28, 0.1);
-}
-
-#tech .articles article a {
-  background-color: #9c0707;
-  color: black;
-}
-
-#entertainment {
-  background-color: rgba(48, 12, 180, 0.1);
-}
-
-#entertainment .articles article a {
-  background-color: #5c32aa;
-  color: black;
+.to-do-list-section li {
+  font-weight: 300;
 }
