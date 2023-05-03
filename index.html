@@ -14,29 +14,32 @@
     />
   </head>
   <body>
-    <header>
-      <h1 class="title">Lista de Tarefas</h1>
-    </header>
     <main>
-      <section class="form-section">
-        <form action="form" class="form">
-          <input
-            id="to-do-item"
-            class="to-do-item"
-            type="text"
-            placeholder="Nome da Tarefa"
-            required
-          />
-          <button class="submitButton" type="submit">Cadastrar</button>
-        </form>
-      </section>
-      <section class="to-do-list-section">
-        <ul id="to-do-list">
-          <li id="to-do-thing">dsadas</li>
-        </ul>
-      </section>
+      <form id="information">
+        <h2 class="formTitle">Formulario</h2>
+        <label for="name">Nome Completo</label>
+        <input required type="text" name="name" id="name" />
+        <label for="cpf">CPF</label>
+        <input required type="text" name="cpf" id="cpf" />
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" />
+        <label for="phone">Telefone</label>
+        <input type="tel" name="phone" id="phone" />
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" Estado="estado" />
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" id="cidade" />
+        <label for="rua">Rua</label>
+        <input type="text" name="rua" id="rua" />
+        <label for="numero">Número</label>
+        <input type="text" name="numero" id="numero" />
+        <label for="cep">CEP</label>
+        <input required type="text" name="cep" id="cep" />
+        <button type="submit">Enviar</button>
+      </form>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
