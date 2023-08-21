@@ -1,15 +1,19 @@
 {
-  "name": "modulo07",
+  "name": "nova-pasta",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass main.scss main.css",
+    "grunt": "grunt",
+    "less": "lessc ./source/styles/main.less ./build/styles/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "sass": "^1.66.1"
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "less": "^4.2.0"
   }
 }
