@@ -1,26 +1,62 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const profileImg = document.querySelector(".profile-avatar");
-  const profileName = document.querySelector(".profile-name");
-  const profileUserName = document.querySelector(".profile-username");
-  const repositories = document.querySelector(".repositories");
-  const seguidores = document.querySelector(".seguidores");
-  const seguindo = document.querySelector(".seguindo");
-  const profileLink = document.querySelector(".profile-link");
+class Client {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  _sayHello() {
+    console.log("hello");
+  }
+}
 
-  fetch("https:api.github.com/users/sergioj1123")
-    .then((response) => {
-      return response.json();
-    })
-    .then((json) => {
-      profileImg.src = json.avatar_url;
-      profileName.innerText = json.name;
-      profileUserName.innerText = json.login;
-      repositories.innerText = json.public_repos;
-      seguidores.innerText = json.followers;
-      seguindo.innerText = json.following;
-      profileLink.href = json.html_url;
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-});
+class NormalAccount {
+  constructor(client, balance, accountNumber) {
+    this._client = client;
+    this._balance = balance;
+    this._accountNumber = accountNumber;
+    this._accountType = "normalAccount";
+  }
+
+  drawBalance(value) {
+    if (this._balance >= value) {
+      this._balance -= value;
+      return value;
+    }
+  }
+
+  deposit(value) {
+    this._balance += value;
+    return this._balance;
+  }
+
+  getBalance() {
+    return this._balance;
+  }
+}
+
+class SavingAccount {
+  constructor(client, balance, accountNumber) {
+    this._client = client;
+    this._balance = balance;
+    this._yield = 1.2;
+    this._accountNumber = accountNumber;
+    this._accountType = "Saving Account";
+  }
+
+  newBalanceAfterOneMonth() {
+    return (this._balance *= this._yield);
+  }
+}
+
+const client1 = new Client("Sergio", 25);
+const client2 = new Client("Test", 25);
+const client3 = new Client("Test3", 25);
+
+const normalAccount = new NormalAccount(client1, 500, 123);
+console.log("🚀 ~ file: main.js:49 ~ normalAccount:", normalAccount);
+
+const saving = new SavingAccount(client2, 1000, 321);
+saving.newBalanceAfterOneMonth();
+console.log("🚀 ~ file: main.js:52 ~ saving:", saving);
+
+const saving2 = new SavingAccount(client3, 1000, 111111);
+console.log("🚀 ~ file: main.js:57 ~ saving2:", saving2);
