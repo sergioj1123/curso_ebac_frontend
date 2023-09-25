@@ -3,14 +3,14 @@ class Client {
     this.name = name;
     this.age = age;
   }
-  _sayHello() {
-    console.log("hello");
+  _getName() {
+    console.log(`The client name is: ${this.name}`);
   }
 }
 
-class NormalAccount {
-  constructor(client, balance, accountNumber) {
-    this._client = client;
+class NormalAccount extends Client {
+  constructor(name, age, balance, accountNumber) {
+    super(name, age);
     this._balance = balance;
     this._accountNumber = accountNumber;
     this._accountType = "normalAccount";
@@ -29,16 +29,14 @@ class NormalAccount {
   }
 
   getBalance() {
-    return this._balance;
+    return console.log(`O saldo da conta é: ${this._balance}`);
   }
 }
 
-class SavingAccount {
-  constructor(client, balance, accountNumber) {
-    this._client = client;
-    this._balance = balance;
+class SavingAccount extends NormalAccount {
+  constructor(name, age, balance, accountNumber) {
+    super(name, age, balance, accountNumber);
     this._yield = 1.2;
-    this._accountNumber = accountNumber;
     this._accountType = "Saving Account";
   }
 
@@ -47,16 +45,21 @@ class SavingAccount {
   }
 }
 
-const client1 = new Client("Sergio", 25);
-const client2 = new Client("Test", 25);
-const client3 = new Client("Test3", 25);
-
-const normalAccount = new NormalAccount(client1, 500, 123);
+console.log("----------------------------------------------------------------");
+const normalAccount = new NormalAccount("Sergio", 25, 500, 123);
+normalAccount._getName();
+normalAccount.getBalance();
 console.log("🚀 ~ file: main.js:49 ~ normalAccount:", normalAccount);
 
-const saving = new SavingAccount(client2, 1000, 321);
+console.log("----------------------------------------------------------------");
+const saving = new SavingAccount("Test", 25, 1000, 321);
+saving._getName();
 saving.newBalanceAfterOneMonth();
+saving.getBalance();
 console.log("🚀 ~ file: main.js:52 ~ saving:", saving);
 
-const saving2 = new SavingAccount(client3, 1000, 111111);
+console.log("----------------------------------------------------------------");
+const saving2 = new SavingAccount("Test 3", 25, 1000, 111111);
+saving2._getName();
+saving2.getBalance();
 console.log("🚀 ~ file: main.js:57 ~ saving2:", saving2);
