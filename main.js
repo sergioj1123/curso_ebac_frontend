@@ -10,7 +10,7 @@ todosAlunos.push({ name: "Aluno E", nota: 0 });
 console.log("Todos alunos: ");
 console.log(todosAlunos);
 
-const aprovados = todosAlunos.map((item) => {
+const aprovados = todosAlunos.filter((item) => {
   if (item.nota >= 6) {
     return item;
   }
